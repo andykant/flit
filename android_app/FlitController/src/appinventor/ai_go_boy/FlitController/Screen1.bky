@@ -1,0 +1,928 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="component_event" id="1" collapsed="true" x="-484" y="-1526">
+    <mutation component_type="Form" instance_name="Screen1" event_name="ErrorOccurred"></mutation>
+    <field name="COMPONENT_SELECTOR">Screen1</field>
+    <statement name="DO">
+      <block type="procedures_callnoreturn" id="2">
+        <mutation name="UpdateSliderView"></mutation>
+        <field name="PROCNAME">UpdateSliderView</field>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="3" x="-156" y="-1495">
+    <mutation component_type="Form" instance_name="Screen1" event_name="Initialize"></mutation>
+    <field name="COMPONENT_SELECTOR">Screen1</field>
+    <statement name="DO">
+      <block type="component_set_get" id="4" inline="false">
+        <mutation component_type="ListPicker" set_or_get="set" property_name="Selection" is_generic="false" instance_name="ListPicker1"></mutation>
+        <field name="COMPONENT_SELECTOR">ListPicker1</field>
+        <field name="PROP">Selection</field>
+        <value name="VALUE">
+          <block type="text" id="5">
+            <field name="TEXT">Breathe</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="6" collapsed="true" x="-485" y="-1472">
+    <mutation component_type="Button" instance_name="PowerButton" event_name="Click"></mutation>
+    <field name="COMPONENT_SELECTOR">PowerButton</field>
+    <statement name="DO">
+      <block type="component_set_get" id="7" inline="false">
+        <mutation component_type="Web" set_or_get="set" property_name="Url" is_generic="false" instance_name="Web1"></mutation>
+        <field name="COMPONENT_SELECTOR">Web1</field>
+        <field name="PROP">Url</field>
+        <value name="VALUE">
+          <block type="text_join" id="8" inline="false">
+            <mutation items="2"></mutation>
+            <value name="ADD0">
+              <block type="text" id="9">
+                <field name="TEXT">http://192.168.0.100/?=</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text" id="10">
+                <field name="TEXT">POWRZZZ</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="11">
+            <mutation component_type="Web" method_name="Get" is_generic="false" instance_name="Web1"></mutation>
+            <field name="COMPONENT_SELECTOR">Web1</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="12" collapsed="true" x="-464" y="-1381">
+    <mutation component_type="Slider" instance_name="SpeedSlider" event_name="PositionChanged"></mutation>
+    <field name="COMPONENT_SELECTOR">SpeedSlider</field>
+    <statement name="DO">
+      <block type="component_set_get" id="13" inline="false">
+        <mutation component_type="Web" set_or_get="set" property_name="Url" is_generic="false" instance_name="Web1"></mutation>
+        <field name="COMPONENT_SELECTOR">Web1</field>
+        <field name="PROP">Url</field>
+        <value name="VALUE">
+          <block type="text_join" id="14" inline="false">
+            <mutation items="4"></mutation>
+            <value name="ADD0">
+              <block type="text" id="15">
+                <field name="TEXT">http://192.168.0.100/?=</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text" id="16">
+                <field name="TEXT">SPEE</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="component_set_get" id="17">
+                <mutation component_type="Slider" set_or_get="get" property_name="ThumbPosition" is_generic="false" instance_name="SpeedSlider"></mutation>
+                <field name="COMPONENT_SELECTOR">SpeedSlider</field>
+                <field name="PROP">ThumbPosition</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="text" id="18">
+                <field name="TEXT">ZZZ</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="19">
+            <mutation component_type="Web" method_name="Get" is_generic="false" instance_name="Web1"></mutation>
+            <field name="COMPONENT_SELECTOR">Web1</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="20" collapsed="true" x="-441" y="-1315">
+    <mutation component_type="Slider" instance_name="SummerSliderShimmer" event_name="PositionChanged"></mutation>
+    <field name="COMPONENT_SELECTOR">SummerSliderShimmer</field>
+    <statement name="DO">
+      <block type="component_set_get" id="21" inline="false">
+        <mutation component_type="Web" set_or_get="set" property_name="Url" is_generic="false" instance_name="Web1"></mutation>
+        <field name="COMPONENT_SELECTOR">Web1</field>
+        <field name="PROP">Url</field>
+        <value name="VALUE">
+          <block type="text_join" id="22" inline="false">
+            <mutation items="4"></mutation>
+            <value name="ADD0">
+              <block type="text" id="23">
+                <field name="TEXT">http://192.168.0.100/?=</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text" id="24">
+                <field name="TEXT">SUMM</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="component_set_get" id="25">
+                <mutation component_type="Slider" set_or_get="get" property_name="ThumbPosition" is_generic="false" instance_name="SummerSliderShimmer"></mutation>
+                <field name="COMPONENT_SELECTOR">SummerSliderShimmer</field>
+                <field name="PROP">ThumbPosition</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="text" id="26">
+                <field name="TEXT">ZZZ</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="27">
+            <mutation component_type="Web" method_name="Get" is_generic="false" instance_name="Web1"></mutation>
+            <field name="COMPONENT_SELECTOR">Web1</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="28" collapsed="true" x="464" y="-1286">
+    <mutation></mutation>
+    <field name="NAME">UpdateSliderView</field>
+    <statement name="STACK">
+      <block type="component_set_get" id="29" inline="false">
+        <mutation component_type="HorizontalArrangement" set_or_get="set" property_name="Visible" is_generic="false" instance_name="BreatheHA"></mutation>
+        <field name="COMPONENT_SELECTOR">BreatheHA</field>
+        <field name="PROP">Visible</field>
+        <value name="VALUE">
+          <block type="logic_boolean" id="30">
+            <field name="BOOL">FALSE</field>
+          </block>
+        </value>
+        <next>
+          <block type="component_set_get" id="31" inline="false">
+            <mutation component_type="HorizontalArrangement" set_or_get="set" property_name="Visible" is_generic="false" instance_name="RainbowHA"></mutation>
+            <field name="COMPONENT_SELECTOR">RainbowHA</field>
+            <field name="PROP">Visible</field>
+            <value name="VALUE">
+              <block type="logic_boolean" id="32">
+                <field name="BOOL">FALSE</field>
+              </block>
+            </value>
+            <next>
+              <block type="component_set_get" id="33" inline="false">
+                <mutation component_type="HorizontalArrangement" set_or_get="set" property_name="Visible" is_generic="false" instance_name="RippleHA"></mutation>
+                <field name="COMPONENT_SELECTOR">RippleHA</field>
+                <field name="PROP">Visible</field>
+                <value name="VALUE">
+                  <block type="logic_boolean" id="34">
+                    <field name="BOOL">FALSE</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="component_set_get" id="35" inline="false">
+                    <mutation component_type="HorizontalArrangement" set_or_get="set" property_name="Visible" is_generic="false" instance_name="SpringHA"></mutation>
+                    <field name="COMPONENT_SELECTOR">SpringHA</field>
+                    <field name="PROP">Visible</field>
+                    <value name="VALUE">
+                      <block type="logic_boolean" id="36">
+                        <field name="BOOL">FALSE</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="component_set_get" id="37" inline="false">
+                        <mutation component_type="HorizontalArrangement" set_or_get="set" property_name="Visible" is_generic="false" instance_name="SummerHA"></mutation>
+                        <field name="COMPONENT_SELECTOR">SummerHA</field>
+                        <field name="PROP">Visible</field>
+                        <value name="VALUE">
+                          <block type="logic_boolean" id="38">
+                            <field name="BOOL">FALSE</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="component_set_get" id="39" inline="false">
+                            <mutation component_type="HorizontalArrangement" set_or_get="set" property_name="Visible" is_generic="false" instance_name="FallHA"></mutation>
+                            <field name="COMPONENT_SELECTOR">FallHA</field>
+                            <field name="PROP">Visible</field>
+                            <value name="VALUE">
+                              <block type="logic_boolean" id="40">
+                                <field name="BOOL">FALSE</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="component_set_get" id="41" inline="false">
+                                <mutation component_type="HorizontalArrangement" set_or_get="set" property_name="Visible" is_generic="false" instance_name="WinterHA"></mutation>
+                                <field name="COMPONENT_SELECTOR">WinterHA</field>
+                                <field name="PROP">Visible</field>
+                                <value name="VALUE">
+                                  <block type="logic_boolean" id="42">
+                                    <field name="BOOL">FALSE</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="controls_if" id="43" inline="false">
+                                    <value name="IF0">
+                                      <block type="logic_compare" id="44" inline="true">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="component_set_get" id="45">
+                                            <mutation component_type="ListPicker" set_or_get="get" property_name="Selection" is_generic="false" instance_name="ListPicker1"></mutation>
+                                            <field name="COMPONENT_SELECTOR">ListPicker1</field>
+                                            <field name="PROP">Selection</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="text" id="46">
+                                            <field name="TEXT">Breathe</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO0">
+                                      <block type="component_set_get" id="47" inline="false">
+                                        <mutation component_type="HorizontalArrangement" set_or_get="set" property_name="Visible" is_generic="false" instance_name="BreatheHA"></mutation>
+                                        <field name="COMPONENT_SELECTOR">BreatheHA</field>
+                                        <field name="PROP">Visible</field>
+                                        <value name="VALUE">
+                                          <block type="logic_boolean" id="48">
+                                            <field name="BOOL">TRUE</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                    <next>
+                                      <block type="controls_if" id="49" inline="false">
+                                        <value name="IF0">
+                                          <block type="logic_compare" id="50" inline="true">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="component_set_get" id="51">
+                                                <mutation component_type="ListPicker" set_or_get="get" property_name="Selection" is_generic="false" instance_name="ListPicker1"></mutation>
+                                                <field name="COMPONENT_SELECTOR">ListPicker1</field>
+                                                <field name="PROP">Selection</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="text" id="52">
+                                                <field name="TEXT">RainbowBeat</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO0">
+                                          <block type="component_set_get" id="53" inline="false">
+                                            <mutation component_type="HorizontalArrangement" set_or_get="set" property_name="Visible" is_generic="false" instance_name="RainbowHA"></mutation>
+                                            <field name="COMPONENT_SELECTOR">RainbowHA</field>
+                                            <field name="PROP">Visible</field>
+                                            <value name="VALUE">
+                                              <block type="logic_boolean" id="54">
+                                                <field name="BOOL">TRUE</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="controls_if" id="55" inline="false">
+                                            <value name="IF0">
+                                              <block type="logic_compare" id="56" inline="true">
+                                                <field name="OP">EQ</field>
+                                                <value name="A">
+                                                  <block type="component_set_get" id="57">
+                                                    <mutation component_type="ListPicker" set_or_get="get" property_name="Selection" is_generic="false" instance_name="ListPicker1"></mutation>
+                                                    <field name="COMPONENT_SELECTOR">ListPicker1</field>
+                                                    <field name="PROP">Selection</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="text" id="58">
+                                                    <field name="TEXT">Ripple</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <statement name="DO0">
+                                              <block type="component_set_get" id="59" inline="false">
+                                                <mutation component_type="HorizontalArrangement" set_or_get="set" property_name="Visible" is_generic="false" instance_name="RippleHA"></mutation>
+                                                <field name="COMPONENT_SELECTOR">RippleHA</field>
+                                                <field name="PROP">Visible</field>
+                                                <value name="VALUE">
+                                                  <block type="logic_boolean" id="60">
+                                                    <field name="BOOL">TRUE</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </statement>
+                                            <next>
+                                              <block type="controls_if" id="61" inline="false">
+                                                <value name="IF0">
+                                                  <block type="logic_compare" id="62" inline="true">
+                                                    <field name="OP">EQ</field>
+                                                    <value name="A">
+                                                      <block type="component_set_get" id="63">
+                                                        <mutation component_type="ListPicker" set_or_get="get" property_name="Selection" is_generic="false" instance_name="ListPicker1"></mutation>
+                                                        <field name="COMPONENT_SELECTOR">ListPicker1</field>
+                                                        <field name="PROP">Selection</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="text" id="64">
+                                                        <field name="TEXT">Spring</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <statement name="DO0">
+                                                  <block type="component_set_get" id="65" inline="false">
+                                                    <mutation component_type="HorizontalArrangement" set_or_get="set" property_name="Visible" is_generic="false" instance_name="SpringHA"></mutation>
+                                                    <field name="COMPONENT_SELECTOR">SpringHA</field>
+                                                    <field name="PROP">Visible</field>
+                                                    <value name="VALUE">
+                                                      <block type="logic_boolean" id="66">
+                                                        <field name="BOOL">TRUE</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </statement>
+                                                <next>
+                                                  <block type="controls_if" id="67" inline="false">
+                                                    <value name="IF0">
+                                                      <block type="logic_compare" id="68" inline="true">
+                                                        <field name="OP">EQ</field>
+                                                        <value name="A">
+                                                          <block type="component_set_get" id="69">
+                                                            <mutation component_type="ListPicker" set_or_get="get" property_name="Selection" is_generic="false" instance_name="ListPicker1"></mutation>
+                                                            <field name="COMPONENT_SELECTOR">ListPicker1</field>
+                                                            <field name="PROP">Selection</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="B">
+                                                          <block type="text" id="70">
+                                                            <field name="TEXT">Summer</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <statement name="DO0">
+                                                      <block type="component_set_get" id="71" inline="false">
+                                                        <mutation component_type="HorizontalArrangement" set_or_get="set" property_name="Visible" is_generic="false" instance_name="SummerHA"></mutation>
+                                                        <field name="COMPONENT_SELECTOR">SummerHA</field>
+                                                        <field name="PROP">Visible</field>
+                                                        <value name="VALUE">
+                                                          <block type="logic_boolean" id="72">
+                                                            <field name="BOOL">TRUE</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </statement>
+                                                    <next>
+                                                      <block type="controls_if" id="73" inline="false">
+                                                        <value name="IF0">
+                                                          <block type="logic_compare" id="74" inline="true">
+                                                            <field name="OP">EQ</field>
+                                                            <value name="A">
+                                                              <block type="component_set_get" id="75">
+                                                                <mutation component_type="ListPicker" set_or_get="get" property_name="Selection" is_generic="false" instance_name="ListPicker1"></mutation>
+                                                                <field name="COMPONENT_SELECTOR">ListPicker1</field>
+                                                                <field name="PROP">Selection</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="B">
+                                                              <block type="text" id="76">
+                                                                <field name="TEXT">Fall</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <statement name="DO0">
+                                                          <block type="component_set_get" id="77" inline="false">
+                                                            <mutation component_type="HorizontalArrangement" set_or_get="set" property_name="Visible" is_generic="false" instance_name="FallHA"></mutation>
+                                                            <field name="COMPONENT_SELECTOR">FallHA</field>
+                                                            <field name="PROP">Visible</field>
+                                                            <value name="VALUE">
+                                                              <block type="logic_boolean" id="78">
+                                                                <field name="BOOL">TRUE</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </statement>
+                                                        <next>
+                                                          <block type="controls_if" id="79" inline="false">
+                                                            <value name="IF0">
+                                                              <block type="logic_compare" id="80" inline="true">
+                                                                <field name="OP">EQ</field>
+                                                                <value name="A">
+                                                                  <block type="component_set_get" id="81">
+                                                                    <mutation component_type="ListPicker" set_or_get="get" property_name="Selection" is_generic="false" instance_name="ListPicker1"></mutation>
+                                                                    <field name="COMPONENT_SELECTOR">ListPicker1</field>
+                                                                    <field name="PROP">Selection</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                  <block type="text" id="82">
+                                                                    <field name="TEXT">Winter</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <statement name="DO0">
+                                                              <block type="component_set_get" id="83" inline="false">
+                                                                <mutation component_type="HorizontalArrangement" set_or_get="set" property_name="Visible" is_generic="false" instance_name="WinterHA"></mutation>
+                                                                <field name="COMPONENT_SELECTOR">WinterHA</field>
+                                                                <field name="PROP">Visible</field>
+                                                                <value name="VALUE">
+                                                                  <block type="logic_boolean" id="84">
+                                                                    <field name="BOOL">TRUE</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </statement>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="85" collapsed="true" x="-73" y="-1217">
+    <mutation component_type="CheckBox" instance_name="AutoOnOff" event_name="Changed"></mutation>
+    <field name="COMPONENT_SELECTOR">AutoOnOff</field>
+    <statement name="DO">
+      <block type="component_set_get" id="86" inline="false">
+        <mutation component_type="Web" set_or_get="set" property_name="Url" is_generic="false" instance_name="Web1"></mutation>
+        <field name="COMPONENT_SELECTOR">Web1</field>
+        <field name="PROP">Url</field>
+        <value name="VALUE">
+          <block type="text_join" id="87" inline="false">
+            <mutation items="4"></mutation>
+            <value name="ADD0">
+              <block type="text" id="88">
+                <field name="TEXT">http://192.168.0.100/?=</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text" id="89">
+                <field name="TEXT">AUTO</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="component_set_get" id="90">
+                <mutation component_type="CheckBox" set_or_get="get" property_name="Checked" is_generic="false" instance_name="AutoOnOff"></mutation>
+                <field name="COMPONENT_SELECTOR">AutoOnOff</field>
+                <field name="PROP">Checked</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="text" id="91">
+                <field name="TEXT">ZZZ</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="92">
+            <mutation component_type="Web" method_name="Get" is_generic="false" instance_name="Web1"></mutation>
+            <field name="COMPONENT_SELECTOR">Web1</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="93" collapsed="true" x="-66" y="-1175">
+    <mutation component_type="CheckBox" instance_name="RotateCheckbox" event_name="Changed"></mutation>
+    <field name="COMPONENT_SELECTOR">RotateCheckbox</field>
+    <statement name="DO">
+      <block type="component_set_get" id="94" inline="false">
+        <mutation component_type="Web" set_or_get="set" property_name="Url" is_generic="false" instance_name="Web1"></mutation>
+        <field name="COMPONENT_SELECTOR">Web1</field>
+        <field name="PROP">Url</field>
+        <value name="VALUE">
+          <block type="text_join" id="95" inline="false">
+            <mutation items="4"></mutation>
+            <value name="ADD0">
+              <block type="text" id="96">
+                <field name="TEXT">http://192.168.0.100/?=</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text" id="97">
+                <field name="TEXT">ROTA</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="component_set_get" id="98">
+                <mutation component_type="CheckBox" set_or_get="get" property_name="Checked" is_generic="false" instance_name="RotateCheckbox"></mutation>
+                <field name="COMPONENT_SELECTOR">RotateCheckbox</field>
+                <field name="PROP">Checked</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="text" id="99">
+                <field name="TEXT">ZZZ</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="100">
+            <mutation component_type="Web" method_name="Get" is_generic="false" instance_name="Web1"></mutation>
+            <field name="COMPONENT_SELECTOR">Web1</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="101" collapsed="true" x="446" y="-1180">
+    <mutation component_type="ListPicker" instance_name="ListPicker1" event_name="AfterPicking"></mutation>
+    <field name="COMPONENT_SELECTOR">ListPicker1</field>
+    <statement name="DO">
+      <block type="component_set_get" id="102" inline="false">
+        <mutation component_type="ListPicker" set_or_get="set" property_name="Text" is_generic="false" instance_name="ListPicker1"></mutation>
+        <field name="COMPONENT_SELECTOR">ListPicker1</field>
+        <field name="PROP">Text</field>
+        <value name="VALUE">
+          <block type="component_set_get" id="103">
+            <mutation component_type="ListPicker" set_or_get="get" property_name="Selection" is_generic="false" instance_name="ListPicker1"></mutation>
+            <field name="COMPONENT_SELECTOR">ListPicker1</field>
+            <field name="PROP">Selection</field>
+          </block>
+        </value>
+        <next>
+          <block type="procedures_callnoreturn" id="104">
+            <mutation name="UpdateSliderView"></mutation>
+            <field name="PROCNAME">UpdateSliderView</field>
+            <next>
+              <block type="component_set_get" id="105" inline="false">
+                <mutation component_type="Web" set_or_get="set" property_name="Url" is_generic="false" instance_name="Web1"></mutation>
+                <field name="COMPONENT_SELECTOR">Web1</field>
+                <field name="PROP">Url</field>
+                <value name="VALUE">
+                  <block type="text_join" id="106" inline="false">
+                    <mutation items="4"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="107">
+                        <field name="TEXT">http://192.168.0.100/?=</field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="text" id="108">
+                        <field name="TEXT">ANIM</field>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="component_set_get" id="109">
+                        <mutation component_type="ListPicker" set_or_get="get" property_name="Text" is_generic="false" instance_name="ListPicker1"></mutation>
+                        <field name="COMPONENT_SELECTOR">ListPicker1</field>
+                        <field name="PROP">Text</field>
+                      </block>
+                    </value>
+                    <value name="ADD3">
+                      <block type="text" id="110">
+                        <field name="TEXT">ZZZ</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="component_method" id="111">
+                    <mutation component_type="Web" method_name="Get" is_generic="false" instance_name="Web1"></mutation>
+                    <field name="COMPONENT_SELECTOR">Web1</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="112" collapsed="true" x="-61" y="-1140">
+    <mutation component_type="Slider" instance_name="BrightnessSlider" event_name="PositionChanged"></mutation>
+    <field name="COMPONENT_SELECTOR">BrightnessSlider</field>
+    <statement name="DO">
+      <block type="component_set_get" id="113" inline="false">
+        <mutation component_type="Web" set_or_get="set" property_name="Url" is_generic="false" instance_name="Web1"></mutation>
+        <field name="COMPONENT_SELECTOR">Web1</field>
+        <field name="PROP">Url</field>
+        <value name="VALUE">
+          <block type="text_join" id="114" inline="false">
+            <mutation items="4"></mutation>
+            <value name="ADD0">
+              <block type="text" id="115">
+                <field name="TEXT">http://192.168.0.100/?=</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text" id="116">
+                <field name="TEXT">BRIG</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="component_set_get" id="117">
+                <mutation component_type="Slider" set_or_get="get" property_name="ThumbPosition" is_generic="false" instance_name="BrightnessSlider"></mutation>
+                <field name="COMPONENT_SELECTOR">BrightnessSlider</field>
+                <field name="PROP">ThumbPosition</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="text" id="118">
+                <field name="TEXT">ZZZ</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="119">
+            <mutation component_type="Web" method_name="Get" is_generic="false" instance_name="Web1"></mutation>
+            <field name="COMPONENT_SELECTOR">Web1</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="120" collapsed="true" x="455" y="-1147">
+    <mutation component_type="Slider" instance_name="BreateHueSlider" event_name="PositionChanged"></mutation>
+    <field name="COMPONENT_SELECTOR">BreateHueSlider</field>
+    <statement name="DO">
+      <block type="component_set_get" id="121" inline="false">
+        <mutation component_type="Web" set_or_get="set" property_name="Url" is_generic="false" instance_name="Web1"></mutation>
+        <field name="COMPONENT_SELECTOR">Web1</field>
+        <field name="PROP">Url</field>
+        <value name="VALUE">
+          <block type="text_join" id="122" inline="false">
+            <mutation items="4"></mutation>
+            <value name="ADD0">
+              <block type="text" id="123">
+                <field name="TEXT">http://192.168.0.100/?=</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text" id="124">
+                <field name="TEXT">BREA</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="component_set_get" id="125">
+                <mutation component_type="Slider" set_or_get="get" property_name="ThumbPosition" is_generic="false" instance_name="BreateHueSlider"></mutation>
+                <field name="COMPONENT_SELECTOR">BreateHueSlider</field>
+                <field name="PROP">ThumbPosition</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="text" id="126">
+                <field name="TEXT">ZZZ</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="127">
+            <mutation component_type="Web" method_name="Get" is_generic="false" instance_name="Web1"></mutation>
+            <field name="COMPONENT_SELECTOR">Web1</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="128" collapsed="true" x="464" y="-1120">
+    <mutation component_type="Slider" instance_name="RainbowWidthSlider" event_name="PositionChanged"></mutation>
+    <field name="COMPONENT_SELECTOR">RainbowWidthSlider</field>
+    <statement name="DO">
+      <block type="component_set_get" id="129" inline="false">
+        <mutation component_type="Web" set_or_get="set" property_name="Url" is_generic="false" instance_name="Web1"></mutation>
+        <field name="COMPONENT_SELECTOR">Web1</field>
+        <field name="PROP">Url</field>
+        <value name="VALUE">
+          <block type="text_join" id="130" inline="false">
+            <mutation items="4"></mutation>
+            <value name="ADD0">
+              <block type="text" id="131">
+                <field name="TEXT">http://192.168.0.100/?=</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text" id="132">
+                <field name="TEXT">RAIN</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="component_set_get" id="133">
+                <mutation component_type="Slider" set_or_get="get" property_name="ThumbPosition" is_generic="false" instance_name="RainbowWidthSlider"></mutation>
+                <field name="COMPONENT_SELECTOR">RainbowWidthSlider</field>
+                <field name="PROP">ThumbPosition</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="text" id="134">
+                <field name="TEXT">ZZZ</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="135">
+            <mutation component_type="Web" method_name="Get" is_generic="false" instance_name="Web1"></mutation>
+            <field name="COMPONENT_SELECTOR">Web1</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="136" collapsed="true" x="468" y="-1093">
+    <mutation component_type="Slider" instance_name="RippleCountSlider" event_name="PositionChanged"></mutation>
+    <field name="COMPONENT_SELECTOR">RippleCountSlider</field>
+    <statement name="DO">
+      <block type="component_set_get" id="137" inline="false">
+        <mutation component_type="Web" set_or_get="set" property_name="Url" is_generic="false" instance_name="Web1"></mutation>
+        <field name="COMPONENT_SELECTOR">Web1</field>
+        <field name="PROP">Url</field>
+        <value name="VALUE">
+          <block type="text_join" id="138" inline="false">
+            <mutation items="4"></mutation>
+            <value name="ADD0">
+              <block type="text" id="139">
+                <field name="TEXT">http://192.168.0.100/?=</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text" id="140">
+                <field name="TEXT">RIPP</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="component_set_get" id="141">
+                <mutation component_type="Slider" set_or_get="get" property_name="ThumbPosition" is_generic="false" instance_name="RippleCountSlider"></mutation>
+                <field name="COMPONENT_SELECTOR">RippleCountSlider</field>
+                <field name="PROP">ThumbPosition</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="text" id="142">
+                <field name="TEXT">ZZZ</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="143">
+            <mutation component_type="Web" method_name="Get" is_generic="false" instance_name="Web1"></mutation>
+            <field name="COMPONENT_SELECTOR">Web1</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="144" collapsed="true" x="480" y="-1013">
+    <mutation component_type="Slider" instance_name="FallSliderSaturation" event_name="PositionChanged"></mutation>
+    <field name="COMPONENT_SELECTOR">FallSliderSaturation</field>
+    <statement name="DO">
+      <block type="component_set_get" id="145" inline="false">
+        <mutation component_type="Web" set_or_get="set" property_name="Url" is_generic="false" instance_name="Web1"></mutation>
+        <field name="COMPONENT_SELECTOR">Web1</field>
+        <field name="PROP">Url</field>
+        <value name="VALUE">
+          <block type="text_join" id="146" inline="false">
+            <mutation items="4"></mutation>
+            <value name="ADD0">
+              <block type="text" id="147">
+                <field name="TEXT">http://192.168.0.100/?=</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text" id="148">
+                <field name="TEXT">FALL</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="component_set_get" id="149">
+                <mutation component_type="Slider" set_or_get="get" property_name="ThumbPosition" is_generic="false" instance_name="FallSliderSaturation"></mutation>
+                <field name="COMPONENT_SELECTOR">FallSliderSaturation</field>
+                <field name="PROP">ThumbPosition</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="text" id="150">
+                <field name="TEXT">ZZZ</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="151">
+            <mutation component_type="Web" method_name="Get" is_generic="false" instance_name="Web1"></mutation>
+            <field name="COMPONENT_SELECTOR">Web1</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="152" collapsed="true" x="489" y="-971">
+    <mutation component_type="Slider" instance_name="WintersliderSnowfall" event_name="PositionChanged"></mutation>
+    <field name="COMPONENT_SELECTOR">WintersliderSnowfall</field>
+    <statement name="DO">
+      <block type="component_set_get" id="153" inline="false">
+        <mutation component_type="Web" set_or_get="set" property_name="Url" is_generic="false" instance_name="Web1"></mutation>
+        <field name="COMPONENT_SELECTOR">Web1</field>
+        <field name="PROP">Url</field>
+        <value name="VALUE">
+          <block type="text_join" id="154" inline="false">
+            <mutation items="4"></mutation>
+            <value name="ADD0">
+              <block type="text" id="155">
+                <field name="TEXT">http://192.168.0.100/?=</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text" id="156">
+                <field name="TEXT">WINT</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="component_set_get" id="157">
+                <mutation component_type="Slider" set_or_get="get" property_name="ThumbPosition" is_generic="false" instance_name="WintersliderSnowfall"></mutation>
+                <field name="COMPONENT_SELECTOR">WintersliderSnowfall</field>
+                <field name="PROP">ThumbPosition</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="text" id="158">
+                <field name="TEXT">ZZZ</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="159">
+            <mutation component_type="Web" method_name="Get" is_generic="false" instance_name="Web1"></mutation>
+            <field name="COMPONENT_SELECTOR">Web1</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="component_event" id="160" x="523" y="-965">
+    <mutation component_type="Slider" instance_name="SpringSliderSize" event_name="PositionChanged"></mutation>
+    <field name="COMPONENT_SELECTOR">SpringSliderSize</field>
+    <statement name="DO">
+      <block type="component_set_get" id="161" inline="false">
+        <mutation component_type="Web" set_or_get="set" property_name="Url" is_generic="false" instance_name="Web1"></mutation>
+        <field name="COMPONENT_SELECTOR">Web1</field>
+        <field name="PROP">Url</field>
+        <value name="VALUE">
+          <block type="text_join" id="162" inline="false">
+            <mutation items="4"></mutation>
+            <value name="ADD0">
+              <block type="text" id="163">
+                <field name="TEXT">http://192.168.0.100/?=</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text" id="164">
+                <field name="TEXT">SPRI</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="component_set_get" id="165">
+                <mutation component_type="Slider" set_or_get="get" property_name="ThumbPosition" is_generic="false" instance_name="SpringSliderSize"></mutation>
+                <field name="COMPONENT_SELECTOR">SpringSliderSize</field>
+                <field name="PROP">ThumbPosition</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="text" id="166">
+                <field name="TEXT">ZZZ</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="component_method" id="167">
+            <mutation component_type="Web" method_name="Get" is_generic="false" instance_name="Web1"></mutation>
+            <field name="COMPONENT_SELECTOR">Web1</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <yacodeblocks ya-version="157" language-version="20"></yacodeblocks>
+</xml>
