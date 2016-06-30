@@ -7,6 +7,6 @@ dir | desc
 **flit/** | microcode for the sculpture itself running on an Arduino Mega 2560
 **libraries/** | supporting libs for microcode
 **wifitoserial_bridge/** | microcode for the ethernet->serial bridge running on an Arduino Uno
-**wiring_guide/** | fritzing wiring layout. Fzz file used solely to generate image. Schematic & PCB views are likely useless
+**wiring_guide/** | fritzing wiring layout. Fzz file used solely to generate image. Schematic & PCB views are useless
 **LICENSE** | MIT Open Source License
 **README.md** | this file
