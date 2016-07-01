@@ -44,6 +44,8 @@ static const uint8_t gDark_mW  =  1 * 5; //  1mA @ 5v =  5mW
 // Power consumed by the MCU
 static const uint8_t gMCU_mW  =  25 * 5; // 25mA @ 5v = 125 mW
 
+
+static uint32_t gMaxPowerInMilliwatts = (uint32_t)(400) * (uint32_t)(5); // 400mA @ 5v default to avoid USB bricking
 static uint8_t  gMaxPowerIndicatorLEDPinNumber = 0; // default = Arduino onboard LED pin.  set to zero to skip this.
 
 
@@ -147,23 +149,32 @@ void set_max_power_indicator_LED( uint8_t pinNumber)
 
 void set_max_power_in_volts_and_milliamps( uint8_t volts, uint32_t milliamps)
 {
-  FastLED.setMaxPowerInVoltsAndMilliamps(volts, milliamps);
+    gMaxPowerInMilliwatts = (uint32_t)((uint32_t)(volts) * milliamps);
 }
 
 void set_max_power_in_milliwatts( uint32_t powerInmW)
 {
-  FastLED.setMaxPowerInMilliWatts(powerInmW);
+    gMaxPowerInMilliwatts = powerInmW;
 }
 
 void show_at_max_brightness_for_power()
 {
-  // power management usage is now in FastLED.show, no need for this function
-  FastLED.show();
+    uint8_t targetBrightness = FastLED.getBrightness();
+    uint8_t max = calculate_max_brightness_for_power_mW( targetBrightness, gMaxPowerInMilliwatts);
+
+    FastLED.setBrightness( max );
+    FastLED.show();
+    FastLED.setBrightness( targetBrightness );
 }
 
 void delay_at_max_brightness_for_power( uint16_t ms)
 {
-  FastLED.delay(ms);
+    uint8_t targetBrightness = FastLED.getBrightness();
+    uint8_t max = calculate_max_brightness_for_power_mW( targetBrightness, gMaxPowerInMilliwatts);
+
+    FastLED.setBrightness( max );
+    FastLED.delay( ms);
+    FastLED.setBrightness( targetBrightness );
 }
 
 FASTLED_NAMESPACE_END

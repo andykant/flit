@@ -1,11 +1,11 @@
 #include <FastLED.h>
 
-#define LED_PIN     6
-#define COLOR_ORDER RGB
-#define CHIPSET     WS2812
-#define NUM_LEDS    100
+#define LED_PIN     5
+#define COLOR_ORDER GRB
+#define CHIPSET     WS2811
+#define NUM_LEDS    30
 
-#define BRIGHTNESS  50
+#define BRIGHTNESS  200
 #define FRAMES_PER_SECOND 60
 
 bool gReverseDirection = false;
@@ -48,14 +48,14 @@ void setup() {
 
   // This first palette is the basic 'black body radiation' colors,
   // which run from black to red to bright yellow to white.
-  //gPal = HeatColors_p;
+  gPal = HeatColors_p;
   
   // These are other ways to set up the color palette for the 'fire'.
   // First, a gradient from black to red to yellow to white -- similar to HeatColors_p
   //   gPal = CRGBPalette16( CRGB::Black, CRGB::Red, CRGB::Yellow, CRGB::White);
   
   // Second, this palette is like the heat colors, but blue/aqua instead of red/yellow
-     gPal = CRGBPalette16( CRGB::Black, CRGB::Blue, CRGB::Aqua,  CRGB::White);
+  //   gPal = CRGBPalette16( CRGB::Black, CRGB::Blue, CRGB::Aqua,  CRGB::White);
   
   // Third, here's a simpler, three-step gradient, from black to red to white
   //   gPal = CRGBPalette16( CRGB::Black, CRGB::Red, CRGB::White);

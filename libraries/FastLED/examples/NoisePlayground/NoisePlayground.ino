@@ -1,7 +1,7 @@
 #include <FastLED.h>
 
-#define kMatrixWidth  10
-#define kMatrixHeight 10
+#define kMatrixWidth  16
+#define kMatrixHeight 16
 
 #define NUM_LEDS (kMatrixWidth * kMatrixHeight)
 // Param for different pixel layouts
@@ -61,7 +61,7 @@ void setup() {
   Serial.println("resetting!");
 
   delay(3000);
-  LEDS.addLeds<WS2812B,6,RGB>(leds,NUM_LEDS);
+  LEDS.addLeds<WS2811,6,GRB>(leds,NUM_LEDS);
   LEDS.setBrightness(96);
 
   hxy = (uint32_t)((uint32_t)random16() << 16) + (uint32_t)random16();

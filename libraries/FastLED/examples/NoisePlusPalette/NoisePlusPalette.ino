@@ -1,12 +1,12 @@
 #include<FastLED.h>
 
-#define LED_PIN     8
-#define BRIGHTNESS  128
-#define LED_TYPE    WS2812B
-#define COLOR_ORDER RGB
+#define LED_PIN     3
+#define BRIGHTNESS  96
+#define LED_TYPE    WS2811
+#define COLOR_ORDER GRB
 
-const uint8_t kMatrixWidth  = 61
-const uint8_t kMatrixHeight = 1;
+const uint8_t kMatrixWidth  = 16;
+const uint8_t kMatrixHeight = 16;
 const bool    kMatrixSerpentineLayout = true;
 
 
@@ -51,7 +51,7 @@ static uint16_t z;
 // use the z-axis for "time".  speed determines how fast time moves forward.  Try
 // 1 for a very slow moving effect, or 60 for something that ends up looking like
 // water.
-uint16_t speed = 5; // speed is set dynamically once we've started up
+uint16_t speed = 20; // speed is set dynamically once we've started up
 
 // Scale determines how far apart the pixels in our noise matrix are.  Try
 // changing these values around to see how it affects the motion of the display.  The
@@ -118,16 +118,6 @@ void fillnoise8() {
   y -= speed / 16;
 }
 
-void Stripe_Palette() {
-  // 'black out' all 16 palette entries...
-  fill_solid( currentPalette, 16, CRGB::Black);
-  // and set every fourth one to random color.
-  currentPalette[0] = CHSV( random8(), 255, 255),
-  currentPalette[4] = CHSV( random8(), 255, 255),
-  currentPalette[8] = CHSV( random8(), 255, 255),
-  currentPalette[12] = CHSV( random8(), 255, 255);
-}
-
 void mapNoiseToLEDsUsingPalette()
 {
   static uint8_t ihue=0;
@@ -164,15 +154,15 @@ void mapNoiseToLEDsUsingPalette()
 
 void loop() {
   // Periodically choose a new palette, speed, and scale
-//ChangePaletteAndSettingsPeriodically();
+  ChangePaletteAndSettingsPeriodically();
 
   // generate noise data
   fillnoise8();
   
   // convert the noise data to colors in the LED array
   // using the current palette
-  StripePallet();
   mapNoiseToLEDsUsingPalette();
+
   LEDS.show();
   // delay(10);
 }
@@ -190,7 +180,7 @@ void loop() {
 // 1 = 5 sec per palette
 // 2 = 10 sec per palette
 // etc
-#define HOLD_PALETTES_X_TIMES_AS_LONG 5
+#define HOLD_PALETTES_X_TIMES_AS_LONG 1
 
 void ChangePaletteAndSettingsPeriodically()
 {
@@ -199,18 +189,18 @@ void ChangePaletteAndSettingsPeriodically()
   
   if( lastSecond != secondHand) {
     lastSecond = secondHand;
-    if( secondHand ==  0)  { currentPalette = RainbowColors_p;         speed = 5; scale = 30; colorLoop = 1; }
-    if( secondHand ==  5)  { SetupPurpleAndGreenPalette();             speed = 3; scale = 50; colorLoop = 1; }
-    if( secondHand == 10)  { SetupBlackAndWhiteStripedPalette();       speed = 5; scale = 30; colorLoop = 1; }
-    if( secondHand == 15)  { currentPalette = ForestColors_p;          speed =  2; scale =120; colorLoop = 0; }
-    if( secondHand == 20)  { currentPalette = CloudColors_p;           speed =  1; scale = 30; colorLoop = 0; }
-    if( secondHand == 25)  { currentPalette = LavaColors_p;            speed =  2; scale = 50; colorLoop = 0; }
-    if( secondHand == 30)  { currentPalette = OceanColors_p;           speed = 5; scale = 90; colorLoop = 0; }
-    if( secondHand == 35)  { currentPalette = PartyColors_p;           speed = 5; scale = 30; colorLoop = 1; }
-    if( secondHand == 40)  { SetupRandomPalette();                     speed = 5; scale = 20; colorLoop = 1; }
-    if( secondHand == 45)  { SetupRandomPalette();                     speed = 15; scale = 50; colorLoop = 1; }
-    if( secondHand == 50)  { SetupRandomPalette();                     speed = 20; scale = 90; colorLoop = 1; }
-    if( secondHand == 55)  { currentPalette = RainbowStripeColors_p;   speed = 8; scale = 20; colorLoop = 1; }
+    if( secondHand ==  0)  { currentPalette = RainbowColors_p;         speed = 20; scale = 30; colorLoop = 1; }
+    if( secondHand ==  5)  { SetupPurpleAndGreenPalette();             speed = 10; scale = 50; colorLoop = 1; }
+    if( secondHand == 10)  { SetupBlackAndWhiteStripedPalette();       speed = 20; scale = 30; colorLoop = 1; }
+    if( secondHand == 15)  { currentPalette = ForestColors_p;          speed =  8; scale =120; colorLoop = 0; }
+    if( secondHand == 20)  { currentPalette = CloudColors_p;           speed =  4; scale = 30; colorLoop = 0; }
+    if( secondHand == 25)  { currentPalette = LavaColors_p;            speed =  8; scale = 50; colorLoop = 0; }
+    if( secondHand == 30)  { currentPalette = OceanColors_p;           speed = 20; scale = 90; colorLoop = 0; }
+    if( secondHand == 35)  { currentPalette = PartyColors_p;           speed = 20; scale = 30; colorLoop = 1; }
+    if( secondHand == 40)  { SetupRandomPalette();                     speed = 20; scale = 20; colorLoop = 1; }
+    if( secondHand == 45)  { SetupRandomPalette();                     speed = 50; scale = 50; colorLoop = 1; }
+    if( secondHand == 50)  { SetupRandomPalette();                     speed = 90; scale = 90; colorLoop = 1; }
+    if( secondHand == 55)  { currentPalette = RainbowStripeColors_p;   speed = 30; scale = 20; colorLoop = 1; }
   }
 }
 
