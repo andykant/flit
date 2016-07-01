@@ -11,5 +11,5 @@ dir | desc
 **libraries/** | supporting libs for microcode - need to copy these to your local Arduino/libraries folder
 **wifitoserial_bridge/** | microcode for the ethernet->serial bridge running on an Arduino Uno
 **wiring_guide/** | fritzing wiring layout. Fzz file used solely to generate image. Schematic & PCB views are useless
-**LICENSE** | MIT Open Source License
+**LICENSE** | License
 **README.md** | this file
