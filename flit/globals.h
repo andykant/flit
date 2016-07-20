@@ -1,4 +1,11 @@
+#ifndef __GLOBALS_H
+#define __GLOBALS_H
 
+#include <Arduino.h>
+#include <FastLED.h>
+#include <RTClib.h>
+#include <Wire.h>
+//#include <SoftwareSerial.h>
 //debug
 #define DEBUG
 
@@ -16,7 +23,8 @@ uint8_t summerShimmer=128;
 uint8_t fallSaturation=255;
 uint8_t winterSnowfall=128;
 uint8_t flitmode=0;
-
+int sunrise=0;
+int sunset=0;
 
 String controllerInput;
 long rotate_time = 0;
@@ -49,4 +57,6 @@ bool  btn_pwr_press,
       
 long last_btn_mils, cooldown_mils;
 
+//SoftwareSerial mySerial(9,10);
 
+#endif //__GLOBALS_H

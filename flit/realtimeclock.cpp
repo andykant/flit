@@ -6,131 +6,90 @@
 // 2016
 #include <Arduino.h>
 #include <RTClib.h>
-#include "power.h"
+#include <Sunrise.h>
 #include "realtimeclock.h"
+#include "power.h"
 
 RTC_DS1307 rtc;
+float LAT = 43.079128;
+float LONG = -88.158561;
+int TZ = -5;
+
+void RtcSetClock()
+{
+  rtc.adjust(DateTime(2016, 7, 14, 12, 0, 0));
+}
+
 
 void RtcSetup()
 {
     if (!rtc.begin())
     {
-#ifdef DEBUG
-        Serial.println(F("Couldn't find RTC"));
-#endif
-        delay(50);
-#ifdef DEBUG
         Serial.println(F("RTC not found..."));
-#endif
         rtc_missing = true;
     }
 
-    if (!rtc.isrunning())
-    {
-#ifdef DEBUG
-        Serial.println(F("Waiting for RTC.."));
-#endif
-    }
     rotate_time = 0;
 
+    DateTime t = rtc.now();
+    if(t.year() == 2000)
+      RtcSetClock();
 
     Serial.print("Clock time: ");
-
     Serial.println(getASCIIDateTime());
 }
 
 void RtcCheck()
 {
     DateTime t = rtc.now();
-  
-    long time_on = 0; //(time of day to turn on in secs
-    long time_off = 0;
 
-    switch (t.month()-1)
+    if(!sunrise)
+      sunrise = initSunrise(t);
+    if(!sunset)
+      sunset = initSunset(t);
+/*
+    Serial.print("Sunrise: ");
+    Serial.println(sunrise);
+    Serial.print("Sunset: ");
+    Serial.println(sunset);
+    Serial.print("Now: ");
+    Serial.println(((t.hour() * 60) + t.minute()));
+    Serial.print("Hour: ");
+    Serial.println(t.hour());
+    Serial.print("Min: ");
+    Serial.println(t.minute());
+    delay(2000);
+  */    
+    if((((t.hour() * 60) + t.minute()) < sunrise + 60) || ((t.hour() * 60)+t.minute()) > sunset - 60)
     {
-    case 0:
-        time_off = 29700;
-        time_on = 56700;
-        break;
-    case 1:
-        time_off = 27900;
-        time_on = 59400;
-        break;
-    case 2:
-        time_off = 32400;
-        time_on = 68400;
-        break;
-    case 3:
-        time_off = 28800;
-        time_on = 70200;
-        break;
-    case 4:
-        time_off = 27000;
-        time_on = 72000;
-        break;
-    case 5:
-        time_off = 22860;
-        time_on = 73500;
-        break;
-    case 6:
-        time_off = 27000;
-        time_on = 73200;
-        break;
-    case 7:
-        time_off = 28800;
-        time_on = 71400;
-        break;
-    case 8:
-        time_off = 30600;
-        time_on = 64800;
-        break;
-    case 9:
-        time_off = 34800;
-        time_on = 64800;
-        break;
-    case 10:
-        time_off = 27600;
-        time_on = 55800;
-        break;
-    case 11:
-        time_off = 29700;
-        time_on = 54900;
-        break;
-    default:
-        //donothing
-        break;
-    };
-
-
-    long time_now = (t.hour() * 3600) + (t.minute() * 60) + t.second();
-    if (rotate_time == 0)
-        rotate_time = time_now;
-
-#ifdef DEBUG
-//  Serial.println(time_now);
-//  Serial.println(time_off);
-//  Serial.println(time_on);
-#endif
-
-    // if OFF and before turn off time or after turn on time (math doesn't know about midnight)
-    if ((digitalRead(SSR_PWR_PIN) == HIGH) && ((time_now < time_off) || (time_now > time_on)))
-    {
-#ifdef DEBUG
-        Serial.println(F("OFF within ON hours: toggling power."));
-#endif
-        powerOn();
+        if(digitalRead(SSR_PWR_PIN) == HIGH)
+        {
+          Serial.println(F("Before dawn or after dusk, turning on LEDs."));
+          powerOn();
+        }
     }
-    // if ON and after turn off time AND before turn on time
-    if ((digitalRead(SSR_PWR_PIN) == LOW) && ((time_now > time_off) && (time_now < time_on)))
+    else
     {
-#ifdef DEBUG
-        Serial.println(F("ON within OFF hours: toggling power."));
-#endif
-        powerOff();
+        if(digitalRead(SSR_PWR_PIN) == LOW)
+        {
+          Serial.print(F("After dawn and before dusk, turning off LEDs."));
+          powerOff();
+        }
     }
-    //else it's already doing what it should
+
+    
 }
 
+int initSunrise(DateTime t)
+{
+  Sunrise mySunrise(LAT, LONG, TZ);
+  return mySunrise.Rise(t.month(), t.day());
+}
+int initSunset(DateTime t)
+{
+  Sunrise mySunrise(LAT, LONG, TZ);
+  return mySunrise.Set(t.month(), t.day());
+}
 
 String getASCIIDateTime()
 {

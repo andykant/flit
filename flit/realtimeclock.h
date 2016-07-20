@@ -9,10 +9,14 @@
 
 extern bool rtc_missing;
 extern long rotate_time;
+extern int sunrise;
+extern int sunset; 
 
-
+void RtcSetClock();
 void RtcSetup();
 void RtcCheck();
+int initSunrise(DateTime t);
+int initSunset(DateTime t);
 String getASCIIDateTime();
 
 
