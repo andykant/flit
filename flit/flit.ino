@@ -5,18 +5,18 @@
 	Nate Marx
 	2016
 */
-
-//must include headers for all packages in ../libraries
-//or your cpp files can't find them later.
+#include <Arduino.h>
 #include <FastLED.h>
 #include <RTClib.h>
+#include <Sunrise.h>
 #include <Wire.h>
+//#include <SoftwareSerial.h>
 
 #include "globals.h"
 #include "power.h"
+#include "serial_control.h"
 #include "buttons.h"
 #include "realtimeclock.h"
-#include "serial_control.h"
 #include "leds.h"
 
 //runs once at start
@@ -26,22 +26,25 @@ void setup() {
   Serial.println(F("Hello. I am Flit."));
 #endif
   powerSetup();
-  ButtonSetup();
-  RtcSetup();
+  //ButtonSetup();
+//  RtcSetup();
+  
+  //mySerialSetup();
   serialSetup();
-  LEDSetup();
+  //LEDSetup();
 
   delay(3000);
+  powerOn();
 }
 
 //loops  forever
 void loop() {
-  LEDLoop();
-  if(autoOnOff && !rtc_missing)
-  {
-     RtcCheck();
-  }
-  ButtonCheck();
+    //LEDLoop();
+  //if(autoOnOff && !rtc_missing)
+  //{
+  //   RtcCheck();
+  //}
+  //ButtonCheck();
 }
 
 #endif //__FLIT_INO

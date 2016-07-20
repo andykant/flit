@@ -390,7 +390,7 @@ void winter()
 void nextAnimation()
 {
     reset_mode();
-    if (flitmode > 6)
+    if (flitmode >= 6)
         flitmode = 0;
     else
         ++flitmode;
