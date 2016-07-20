@@ -8,13 +8,16 @@
 //void mySerialSetup();
 //void mySerialEvent();
 //
-void serialSetup();
-void serialEvent();
+void serial2Setup();
+void serialEvent2();
 //void serialEvent2();
 
+void processInput(String input);
 
 extern String controllerInput;
 extern bool autoOnOff, rotate;
+extern uint8_t  flitmode;
+/*
 extern uint8_t  globalBrightness,
                 globalSpeed,
                 breatheHue,
@@ -24,8 +27,5 @@ extern uint8_t  globalBrightness,
                 summerShimmer,
                 fallSaturation,
                 winterSnowfall,
-                flitmode;
-
-bool Contains( String s, String search);
-
+*/
 #endif //__SERIAL_CONTROL_H
