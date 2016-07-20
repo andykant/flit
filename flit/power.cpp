@@ -47,5 +47,26 @@ void togglePower()
     }
 }
 
+void powerSelfTest()
+{
+  Serial.println(F("Power section self-test:"));
+  Serial.println(F("powerSetup()"));
+  powerSetup();
+  delay(1000);
+  Serial.println(F("powerOn()"));
+  powerOn();
+  delay(1000);
+  Serial.println(F("powerOff()"));
+  powerOff();
+  delay(1000);
+  Serial.println(F("togglePower()"));
+  togglePower();
+  delay(1000);
+  Serial.println(F("togglePower()"));
+  togglePower();
+  delay(1000);
+  Serial.println(F("Test complete."));
+  delay(5000);
+}
 
 #endif //__POWER_CPP

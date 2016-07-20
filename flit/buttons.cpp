@@ -46,7 +46,7 @@ void trig_lck_btn()
     }
 }
 
-void ButtonSetup()
+void buttonSetup()
 {
     pinMode(BTN_PWR_PIN, INPUT);
     pinMode(BTN_NXT_PIN, INPUT);
@@ -65,13 +65,13 @@ void ButtonSetup()
 }
 
 //basic button press with debounce and 1 sec cooldown
-void ButtonCheck()
+void buttonCheck()
 {
     bool reading = false;
     if (!cooldown_state)
     {
-//        reading = (digitalRead(BTN_PWR_PIN) == LOW);
-        reading = (digitalRead(BTN_PWR_PIN) == HIGH);
+        reading = (digitalRead(BTN_PWR_PIN) == LOW);
+//        reading = (digitalRead(BTN_PWR_PIN) == HIGH);
         if (reading && btn_pwr_press && (millis() > (DEB_MILS + last_btn_mils)))
         {
             Serial.println(F("Power button pressed."));
@@ -90,8 +90,8 @@ void ButtonCheck()
             }
         }
 
-//        reading = (digitalRead(BTN_NXT_PIN) == LOW);
-        reading = (digitalRead(BTN_NXT_PIN) == HIGH);
+        reading = (digitalRead(BTN_NXT_PIN) == LOW);
+//        reading = (digitalRead(BTN_NXT_PIN) == HIGH);
         if (reading && btn_nxt_press && (millis() > (DEB_MILS + last_btn_mils)))
         {
             Serial.println(F("Next button pressed."));
@@ -110,8 +110,8 @@ void ButtonCheck()
             }
         }
 
-        reading = (digitalRead(BTN_LCK_PIN) == HIGH);
-//        reading = (digitalRead(BTN_LCK_PIN) == LOW);
+//        reading = (digitalRead(BTN_LCK_PIN) == HIGH);
+        reading = (digitalRead(BTN_LCK_PIN) == LOW);
         if (reading && btn_lck_press && (millis() > (DEB_MILS + last_btn_mils)))
         {
             Serial.println(F("Hold button pressed."));
@@ -138,5 +138,28 @@ void ButtonCheck()
         }
     }
 }
+
+void buttonSelfTest()
+{
+  Serial.println("Button module self-test:");
+  Serial.println("buttonSetup()");
+   buttonSetup();
+  delay(1000);
+  Serial.println("buttonCheck()");
+   buttonCheck();
+  delay(1000);
+  Serial.println("trig_pwr_btn()");
+  trig_pwr_btn();
+  delay(1000);
+  Serial.println("trig_nxt_btn()");
+  trig_nxt_btn();
+  delay(1000);
+  Serial.println("trig_lck_btn()");
+  trig_lck_btn();
+  delay(1000);
+  Serial.println("Button Self-Test Complete.");
+  delay(5000);
+}
+
 
 #endif //__BUTTONS_CPP

@@ -10,7 +10,6 @@
 #include <RTClib.h>
 #include <Sunrise.h>
 #include <Wire.h>
-//#include <SoftwareSerial.h>
 
 #include "globals.h"
 #include "power.h"
@@ -26,25 +25,25 @@ void setup() {
   Serial.println(F("Hello. I am Flit."));
 #endif
   powerSetup();
-  //ButtonSetup();
-//  RtcSetup();
-  
-  //mySerialSetup();
-  serialSetup();
-  //LEDSetup();
+  buttonSetup();
+  rtcSetup();
+  serial2Setup();
+  LEDSetup();
 
   delay(3000);
-  powerOn();
+  //rtcSelfTest();
+  //while(1){};
 }
 
 //loops  forever
 void loop() {
-    //LEDLoop();
-  //if(autoOnOff && !rtc_missing)
-  //{
-  //   RtcCheck();
-  //}
-  //ButtonCheck();
+  serialEvent2();
+    LEDLoop();
+  if(autoOnOff && !rtc_missing)
+  {
+     rtcCheck();
+  }
+  buttonCheck();
 }
 
 #endif //__FLIT_INO

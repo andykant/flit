@@ -12,12 +12,13 @@ extern long rotate_time;
 extern int sunrise;
 extern int sunset; 
 
-void RtcSetClock();
-void RtcSetup();
-void RtcCheck();
+void rtcSetClock();
+void rtcSetup();
+void rtcCheck();
 int initSunrise(DateTime t);
 int initSunset(DateTime t);
 String getASCIIDateTime();
+void rtcSelfTest();
 
 
 #endif //__REALTIMECLOCK_H
