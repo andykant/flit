@@ -13,6 +13,7 @@
 bool rtc_missing=false;
 bool rotate=true;
 bool autoOnOff=true;
+/*
 uint8_t globalBrightness=254;
 uint8_t globalSpeed=128;
 uint8_t breatheHue=0;
@@ -22,6 +23,7 @@ uint8_t springSize=200;
 uint8_t summerShimmer=128;
 uint8_t fallSaturation=255;
 uint8_t winterSnowfall=128;
+*/
 uint8_t flitmode=0;
 int sunrise=0;
 int sunset=0;
@@ -45,8 +47,8 @@ CRGBPalette16 currentPalette(CloudColors_p);
 uint16_t x,y,z;
 uint16_t noise_speed = 20;
 uint16_t noise_scale = 30;
-uint8_t noise[2][31];
-uint8_t       colorLoop = 1;
+uint8_t noise[61][61];
+uint8_t colorLoop = 1;
 
 
 

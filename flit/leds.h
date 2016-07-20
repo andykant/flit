@@ -9,13 +9,15 @@
 
 #include <FastLED.h>
 
-#define LED_PIN_L 7
-#define LED_PIN_R 8
+#define LED_PIN_L 8
+#define LED_PIN_R 9
 #define NUM_LEDS 61
 #define COLOR_ORDER RGB
 #define LED_TYPE WS2812B
 #define maxsteps 16
 
+
+/*
 extern uint8_t   globalBrightness,
                  globalSpeed,
                  breatheHue,
@@ -25,7 +27,8 @@ extern uint8_t   globalBrightness,
                  summerShimmer,
                  fallSaturation,
                  winterSnowfall,
-                 bgcol,
+*/
+extern uint8_t   bgcol,
                  colour,
                  flitmode;
 
@@ -40,7 +43,7 @@ extern CRGBPalette16 currentPalette;
 extern uint16_t x,y,z;
 extern uint16_t noise_speed;
 extern uint16_t noise_scale;
-extern uint8_t noise[2][31];
+extern uint8_t noise[61][61];
 extern uint8_t colorLoop;
 
 
@@ -48,9 +51,9 @@ extern uint8_t colorLoop;
 
 void breathe();
 void rainbow_beat();
-void ripple() ;
+void wow() ;
 void spring();
-void show_automaton(int automaton[]);
+//void show_automaton(int automaton[]);
 void summer();
 void fall();
 void winter();
