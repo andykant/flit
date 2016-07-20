@@ -21,7 +21,7 @@ byte mac[] = {
 };
 
 EthernetServer server(80);
-#define W5200_CS  52
+#define W5200_CS  10
 #define SDCARD_CS 4
 
 
@@ -61,7 +61,7 @@ void setup() {
         // after 5 tries notify flit and stop blocking.
         if (i > 5)
         {
-            Serial.println("ETH0")
+            Serial.println("ETH0");
             break;
         }
 
