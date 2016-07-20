@@ -7,10 +7,17 @@
 	2016
 */
 
-#define LED_LCK_PIN 24
-#define BTN_PWR_PIN 26
-#define BTN_NXT_PIN 28
-#define BTN_LCK_PIN 30
+#define LED_LCK_PIN 2
+#define BTN_PWR_PIN 4
+#define BTN_NXT_PIN 5
+#define BTN_LCK_PIN 6
+
+//
+//#define LED_LCK_PIN 24
+//#define BTN_PWR_PIN 26
+//#define BTN_NXT_PIN 28
+//#define BTN_LCK_PIN 30
+
 #define DEB_MILS 50
 #define COOLDOWN_MILS 1000
 

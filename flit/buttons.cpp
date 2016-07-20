@@ -7,9 +7,8 @@
 	2016
 */
 #include <Arduino.h>
-#include <FastLED.h>
-#include "power.h"
 #include "leds.h"
+#include "power.h"
 #include "buttons.h"
 
 void trig_pwr_btn()
@@ -71,9 +70,11 @@ void ButtonCheck()
     bool reading = false;
     if (!cooldown_state)
     {
-        reading = (digitalRead(BTN_PWR_PIN) == LOW);
+//        reading = (digitalRead(BTN_PWR_PIN) == LOW);
+        reading = (digitalRead(BTN_PWR_PIN) == HIGH);
         if (reading && btn_pwr_press && (millis() > (DEB_MILS + last_btn_mils)))
         {
+            Serial.println(F("Power button pressed."));
             last_btn_mils = 0;
             cooldown_state = true;
             cooldown_mils = millis();
@@ -89,9 +90,11 @@ void ButtonCheck()
             }
         }
 
-        reading = (digitalRead(BTN_NXT_PIN) == LOW);
+//        reading = (digitalRead(BTN_NXT_PIN) == LOW);
+        reading = (digitalRead(BTN_NXT_PIN) == HIGH);
         if (reading && btn_nxt_press && (millis() > (DEB_MILS + last_btn_mils)))
         {
+            Serial.println(F("Next button pressed."));
             last_btn_mils = 0;
             cooldown_state = true;
             cooldown_mils = millis();
@@ -107,9 +110,11 @@ void ButtonCheck()
             }
         }
 
-        reading = (digitalRead(BTN_LCK_PIN) == LOW);
+        reading = (digitalRead(BTN_LCK_PIN) == HIGH);
+//        reading = (digitalRead(BTN_LCK_PIN) == LOW);
         if (reading && btn_lck_press && (millis() > (DEB_MILS + last_btn_mils)))
         {
+            Serial.println(F("Hold button pressed."));
             last_btn_mils = 0;
             cooldown_state = true;
             cooldown_mils = millis();
