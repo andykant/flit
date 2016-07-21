@@ -1,0 +1,5 @@
+0) the animation code still needs reorg and cleanup. It's pretty jumbled right now.
+   Regardless, it compiles and even just Breathe is enough to test funcitonality.
+1) map globalBrightness/speed better to animations
+2) some strings don't match from controller driver
+3) controller serial keepalive/handshake/better verification of data recieved
