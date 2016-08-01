@@ -3,3 +3,5 @@
 ✓1) map globalBrightness/speed better to animations //removed from controller
 ✓2) some strings don't match from controller driver
 ✓3) controller serial keepalive/handshake/better verification of data recieved
+
+Using github's Issues from here on out
